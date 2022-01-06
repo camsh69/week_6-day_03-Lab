@@ -56,9 +56,15 @@ describe('Cinema', function () {
     const actual = cinema.minLength(95);
     assert.strictEqual(actual, true);
   });
+
   it('should be able to calculate total running time of all films', function() {
     const actual = cinema.totalRunTime();
-    assert.strictEqual(actual, 622)
+    assert.strictEqual(actual, 622);
   });
+
+  it('should be able films by year', function() {
+    const actual = cinema.filterByProperty('year', 2018);
+    assert.deepStrictEqual(actual, [blackPanther]);
+  })
 
 });
